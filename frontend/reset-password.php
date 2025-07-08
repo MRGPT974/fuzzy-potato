@@ -8,6 +8,11 @@ if (!$token || !preg_match('/^[a-zA-Z0-9]{32,}$/', $token)) {
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="description" content="Tatienounou connecte parents et professionnels de la garde d'enfants à La Réunion." />
+  <meta property="og:title" content="Réinitialisation du mot de passe" />
+  <meta property="og:description" content="Tatienounou connecte parents et professionnels de la garde d'enfants à La Réunion." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/Mme Nobody &amp; baby 2.png" />
   <title>Réinitialisation du mot de passe</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
