@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Tatienounou</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style> body { font-family: 'Poppins', sans-serif; } </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="bg-violet-600 text-white text-center py-6 shadow">
+    <h1 class="text-2xl font-semibold">Contactez-nous</h1>
+    <p class="text-sm text-gray-200">Une question ? Une demande ? Écrivez-nous.</p>
+  </header>
+
+  <!-- Formulaire de contact -->
+  <main class="max-w-2xl mx-auto px-4 py-12">
+    <form action="../backend/contact.php" method="POST" class="bg-white p-6 rounded-xl shadow space-y-4">
+      <div>
+        <label for="nom" class="block text-sm font-medium text-gray-700 mb-1">Votre nom</label>
+        <input type="text" id="nom" name="nom" required class="w-full border px-4 py-2 rounded" autocomplete="name" />
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Votre email</label>
+        <input type="email" id="email" name="email" required class="w-full border px-4 py-2 rounded" autocomplete="email" />
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Votre message</label>
+        <textarea id="message" name="message" rows="5" required class="w-full border px-4 py-2 rounded"></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-violet-600 text-white py-2 rounded hover:bg-violet-700 transition">Envoyer</button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-violet-700 text-white text-center py-6 mt-10">
+    <div class="flex flex-wrap justify-center gap-4 mb-4">
+      <a href="/footer/mentions-legales.html" class="hover:underline">Mentions légales</a>
+      <a href="/footer/cgu.html" class="hover:underline">CGU</a>
+      <a href="/footer/cgv.html" class="hover:underline">CGV</a>
+      <a href="/footer/confidentialite.html" class="hover:underline">Confidentialité</a>
+      <a href="/footer/cookies.html" class="hover:underline">Cookies</a>
+    </div>
+    <p class="text-sm">&copy; 2025 Tatienounou.fr – Tous droits réservés</p>
+  </footer>
+
+  <!-- Cookie banner -->
+  <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white text-sm p-4 flex justify-between items-center hidden">
+    <p>Ce site utilise des cookies pour améliorer votre expérience.</p>
+    <button onclick="acceptCookies()" class="bg-white text-gray-900 px-3 py-1 rounded ml-4 hover:bg-gray-200">OK</button>
+  </div>
+
+  <script>
+    function acceptCookies() {
+      localStorage.setItem('tatienounou-cookies', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+
+    window.onload = function () {
+      if (localStorage.getItem('tatienounou-cookies') !== 'accepted') {
+        document.getElementById('cookie-banner').style.display = 'flex';
+      }
+    };
+  </script>
+</body>
+</html>
